@@ -1,0 +1,18 @@
+# Scan this file for changes every 30 seconds
+refresh_rate: 30 seconds
+
+appenders:
+  my_stdout:
+    kind: console
+    encoder:
+      pattern: "[{h({d(%Y-%m-%dT%H:%M:%S)(utc)}] [{l}] {m}{n})}"
+  my_file_logger:
+    kind: file
+    path: "sytadin2mqtt.json.log"
+    encoder:
+      kind: json
+root:
+  level: info
+  appenders:
+    - my_stdout
+    - my_file_logger
