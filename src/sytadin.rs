@@ -20,10 +20,8 @@ fn get_tf_trend(doc: Document) -> String {
     for node in doc.find(Class("barometre_tendance")) {
         return node
             .find(Name("img"))
-            .next()
-            .unwrap()
-            .attr("alt")
-            .unwrap()
+            .next().unwrap()
+            .attr("alt").unwrap()
             .to_string();
     }
 
@@ -34,10 +32,8 @@ fn get_tf_level(doc: Document) -> String {
     for node in doc.find(Class("barometre_niveau")) {
         return node
             .find(Name("img"))
-            .next()
-            .unwrap()
-            .attr("alt")
-            .unwrap()
+            .next().unwrap()
+            .attr("alt").unwrap()
             .to_string();
     }
 
